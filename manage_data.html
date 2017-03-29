@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="css/teach_data.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(window).ready(function () {
+            $(".pic").eq(0).fadeIn();
+            $("textarea").each(function () {
+                var w = parseInt($(this).css("width"));
+                $(this).css("height",$(this).val().split('').length*100/w+20+'px');
+            });
+            $("textarea").each(function () {
+                $(this).on("keyup",function () {
+                    var w = parseInt($(this).css("width"));
+                    $(this).css("height",$(this).val().split('').length*100/w+20+'px');
+                })
+            });
+            //翻页
+            $(".nav a").each(function (i) {
+                $(this).on("click",function () {
+                    setTimeout(function () {
+                        $("textarea").each(function () {
+                            var w = parseInt($(this).css("width"));
+                            $(this).css("height",$(this).val().split('').length*100/w+20+'px');
+                        });
+                    },0);
+
+                    $(".nav a").each(function (j) {
+                        $(this).css("background","none");
+                        $(".pic").eq(j).css("display","none");
+                    });
+                    $(this).css("background","#eee");
+                    $(".pic").eq(i).fadeIn();
+                })
+            })
+        })
+    </script>
+    <style>
+        textarea{
+            width:90%;
+            overflow:auto;
+            border:1px solid  #ddd;
+            background:none;
+        }
+        .title{
+            width:1000px;
+            margin:0 auto;
+            font-size: 30px;
+            color:#b77231;
+        }
+        .submit{
+            width:1000px;
+            margin:30px auto 0;
+            height:40px;
+            text-align: right;
+            background: rgba(187, 226, 214, 0.4);
+        }
+        .submit input[type='submit']{
+            width:160px;
+            height:40px;
+            background:orangered;
+            cursor:pointer;
+        }
+        .nav{
+            height:50px;
+            background:#8c8484;
+            line-height:50px;
+        }
+        .nav .nav_box{
+            width:1000px;
+            margin:0 auto;
+        }
+        .nav a{
+            text-decoration:none;
+            color:#000;
+            display:inline-block;
+            height:50px;
+            padding:0 20px;
+        }
+        .active{
+            background:#eee;
+        }
+        .pic{
+            display:none;
+            width:1000px;
+        }
+        #camp textarea{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <h1>UCE 用户信息管理系统</h1>
+</div>
+<div class="main">
+    <div class="list">
+        <a href="manage.html">申请表管理</a>
+        <a href="manage_pic.html">图片管理</a>
+        <a href="manage_data.html" style="background:#666">数据管理</a>
+        <a class="exit" style="background:red;color:#000">安全退出</a>
+    </div>
+    <div class="container">
+        <div class="nav">
+            <div class="nav_box">
+                <a href="javascript:;" class="active">Teach in China</a>
+                <a href="javascript:;">Study in China</a>
+                <a href="javascript:;">TESL Summer Camp</a>
+            </div>
+
+        </div>
+        <div class="pic">
+            <form action="">
+                <div class="table">
+                    <h1 class="title">Teach English in China</h1>
+                    <p class="guide">UCE is now accepting applications for <textarea name="T_year" id="T_year" style="width:60px;text-align: center">2017</textarea> job openings: </p>
+                    <div class="tab tab1">
+                        <div class="country">
+                            <div class="border">
+                                <h2>Country</h2>
+                                <p><textarea name="T_country" id="T_country" style="width:60px;height:20px;">China</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="type">
+                            <div class="border">
+                                <h2>Job Type</h2>
+                                <p><textarea name="T_job_type" id="T_job_type" style="width:100%">Full-time(~20 sessions/week, including office hours)</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="length">
+                            <div class="border">
+                                <h2>Teaching Period</h2>
+                                <p><span>·</span><textarea name="T_teach_period_1" id="T_teach_period_1">One semester</textarea></p>
+                                <p><span>·</span><textarea name="T_teach_period_2" id="T_teach_period_2">Half a year</textarea></p>
+                                <p><span>·</span><textarea name="T_teach_period_3" id="T_teach_period_3">One year+</textarea></p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div>
+                                <h2>Job Category</h2>
+                                <p><span>·</span><textarea name="T_job_category_1" id="T_job_category_1">Pre-School</textarea></p>
+                                <p><span>·</span><textarea name="T_job_category_2" id="T_job_category_2">Kindergarten</textarea></p>
+                                <p><span>·</span><textarea name="T_job_category_3" id="T_job_category_3">Elementary School</textarea></p>
+                                <p><span>·</span><textarea name="T_job_category_4" id="T_job_category_4">Middle School</textarea></p>
+                                <p><span>·</span><textarea name="T_job_category_5" id="T_job_category_5">High School</textarea></p>
+                                <p><span>·</span><textarea name="T_job_category_6" id="T_job_category_6">College/University</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab tab2">
+                        <div class="salary">
+                            <div class="border">
+                                <h2>Salary and Benefits</h2>
+                                <p><span>·</span><textarea name="T_salary_benefits_1" id="T_salary_benefits_1">Wages: 8,000RMB+/month</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_2" id="T_salary_benefits_2">Free housing</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_3" id="T_salary_benefits_3">Health Insurance</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_4" id="T_salary_benefits_4">Paid vacations and public holidays</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_5" id="T_salary_benefits_5">Certificate of Teaching</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_6" id="T_salary_benefits_6">A round-trip international air ticket covered for one-year placement or a one-way ticket for one-semester placement;</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_7" id="T_salary_benefits_7">Free visa service</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_8" id="T_salary_benefits_8">Free airport pick-up upon arrival and drop-off upon departure</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_9" id="T_salary_benefits_9">Modern and fully equipped teaching facilities and classrooms</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_10" id="T_salary_benefits_10">Guided tour to historic attractions (with TESL Summer Program)</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_11" id="T_salary_benefits_11">Social activities and interaction with native Chinese teachers of Chinese</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_12" id="T_salary_benefits_12">Extensive teaching resources and materials available</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_13" id="T_salary_benefits_13">Chinese Language & Culture lessons</textarea></p>
+                                <p><span>·</span><textarea name="T_salary_benefits_14" id="T_salary_benefits_14">Life-time job referral</textarea></p>
+                            </div>
+                        </div>
+                        <div class="fee">
+                            <div class="border">
+                                <h2>Program Fee</h2>
+                                <p><span>·</span><textarea name="T_program_fee1" id="T_program_fee1">One-year: $490</textarea></p>
+                                <p><span>·</span><textarea name="T_program_fee2" id="T_program_fee2">Half a year & One-semester: $690</textarea></p>
+                                <h3>Regular:</h3>
+                                <p><span>·</span><textarea name="T_program_fee1_regular" id="T_program_fee1_regular">One-year: $690</textarea></p>
+                                <p><span>·</span><textarea name="T_program_fee2_regular" id="T_program_fee2_regular">One-semester: $890</textarea></p>
+                                <p style="margin-bottom:10px"><textarea name="T_program_fee_warning_1" id="T_program_fee_warning_1" style="width:100%">Program Fee is fully refundable before visa process.</textarea></p>
+                                <p><textarea name="T_program_fee_warning_2" id="T_program_fee_warning_2" style="width:100%">Couples are eligible for joint placement. Some host institutions even encourage the accompaniment of family members, who may share your accommodation at no extra cost.</textarea></p>
+                            </div>
+                        </div>
+                        <div class="qualifications">
+                            <div>
+                                <h2>Qualifications</h2>
+                                <p><span>·</span><textarea name="T_qualifications_1" id="T_qualifications_1">Native English speaker</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_2" id="T_qualifications_2">U.S./U.K./Canadian Passport holder</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_3" id="T_qualifications_3">Prefer Bachelor Degree (additional $300 program fee for those without Bachelor degree).</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_4" id="T_qualifications_4">Genuinely interested in teaching in China and making a difference</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_5" id="T_qualifications_5">No Chinese language ability required</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_6" id="T_qualifications_6">TESL Certificate OR at least 3 years of teaching experience OR join UCE TESL Summer Camp prior to the start of the fall semester (program fee for TESL summer/winter camp is waived). See TESL Summer Camp for details.</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_7" id="T_qualifications_7">We encourage the love of teaching and learning about other cultures, the ability to adapt and an understanding of new environments and multi-cultural working situations.</textarea></p>
+                                <p><span>·</span><textarea name="T_qualifications_8" id="T_qualifications_8">Flexibility and a sense of adventure are prime requirements for participants.</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="title">Experienced Teaching Positions</h1>
+                    <div class="tab tab1">
+                        <div class="country">
+                            <div class="border">
+                                <h2>Country</h2>
+                                <p><textarea name="TP_country" id="TP_country" style="width:60px;height:20px;">China</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="type">
+                            <div class="border">
+                                <h2>Job Type</h2>
+                                <p><textarea name="TP_job_type" id="TP_job_type" style="width:100%">Full-time(35hrs/week, including office hours)</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="length">
+                            <div class="border">
+                                <h2>Teaching Period</h2>
+                                <p><span>·</span><textarea name="TP_teach_period_1" id="TP_teach_period_1">One semester</textarea></p>
+                                <p><span>·</span><textarea name="TP_teach_period_2" id="TP_teach_period_2">One year</textarea></p>
+                                <p><span>·</span><textarea name="TP_teach_period_3" id="TP_teach_period_3">Multiple years</textarea></p>
+                                <p><span>·</span><textarea name="TP_teach_period_4" id="TP_teach_period_4">Unlimited</textarea></p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div>
+                                <h2>Job Category</h2>
+                                <p><span>·</span><textarea name="TP_job_category_1" id="TP_job_category_1">Pre-School</textarea></p>
+                                <p><span>·</span><textarea name="TP_job_category_2" id="TP_job_category_2">Kindergarten</textarea></p>
+                                <p><span>·</span><textarea name="TP_job_category_3" id="TP_job_category_3">Elementary School</textarea></p>
+                                <p><span>·</span><textarea name="TP_job_category_4" id="TP_job_category_4">Middle School</textarea></p>
+                                <p><span>·</span><textarea name="TP_job_category_5" id="TP_job_category_5">High School</textarea></p>
+                                <p><span>·</span><textarea name="TP_job_category_6" id="TP_job_category_6">College/University– majors available at undergraduate and post-graduate are: education, electrical engineering, mechanical engineering, computer science, computer engineering, hygiene science, business administration, finance, accounting, biomedical engineering, media and communication, interior design, industrial design, etc.</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab tab2">
+                        <div class="salary">
+                            <div class="border">
+                                <h2>Salary and Benefits</h2>
+                                <p><span>·</span><textarea name="TP_salary_benefits_1" id="TP_salary_benefits_1">Wages: 8,000RMB+/month</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_2" id="TP_salary_benefits_2">Free housing</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_3" id="TP_salary_benefits_3">Health Insurance</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_4" id="TP_salary_benefits_4">Paid vacations and public holidays</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_5" id="TP_salary_benefits_5">Legal work visa</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_6" id="TP_salary_benefits_6">One round-trip international air ticket covered per year of teaching</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_7" id="TP_salary_benefits_7">Free airport pick-up upon arrival and drop-off upon departure</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_8" id="TP_salary_benefits_8">Modern and fully equipped teaching facilities and classrooms</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_9" id="TP_salary_benefits_9">Extensive teaching resources and materials available</textarea></p>
+                                <p><span>·</span><textarea name="TP_salary_benefits_10" id="TP_salary_benefits_10">Chinese Language & Culture lessons</textarea></p>
+                            </div>
+                        </div>
+                        <div class="fee">
+                            <div class="border">
+                                <h2>Experience</h2>
+                                <p><span>·</span><textarea name="TP_experience_1" id="TP_experience_1">3 years or above of professional teaching experience, OR</textarea></p>
+                                <p><span>·</span><textarea name="TP_experience_2" id="TP_experience_2">10 years or above of working experience in the related industries for teaching in universities and colleges</textarea></p>
+                            </div>
+                        </div>
+                        <div class="qualifications">
+                            <div>
+                                <h2>Qualifications</h2>
+                                <p><span>·</span><textarea name="TP_qualifications_1" id="TP_qualifications_1">Bachelor’s Degree</textarea></p>
+                                <p><span>·</span><textarea name="TP_qualifications_2" id="TP_qualifications_2">Native English speaker</textarea></p>
+                                <p><span>·</span><textarea name="TP_qualifications_3" id="TP_qualifications_3">U.S./U.K./Canadian Passport holder</textarea></p>
+                                <p><span>·</span><textarea name="TP_qualifications_4" id="TP_qualifications_4">A genuine love of Chinese culture and teaching</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="title">Faculty Sabbatical Program</h1>
+                    <p class="guide">Faculty members from all U.S./Canadian universities and colleges are welcomed to apply for our<textarea name="TS_year" id="TS_year" style="width:60px">2017</textarea>Sabbatical in China program.</p>
+                    <div class="tab tab1">
+                        <div class="country">
+                            <div class="border">
+                                <h2>Country</h2>
+                                <p><textarea name="TS_country" id="TS_country" style="width:60px;height:20px;">China</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="type">
+                            <div class="border">
+                                <h2>Job Type</h2>
+                                <p><textarea name="TS_job_type" id="TS_job_type" style="width:100%">Faculty Sabbatical</textarea></p>
+                            </div>
+
+                        </div>
+                        <div class="length">
+                            <div class="border">
+                                <h2>Teaching Period</h2>
+                                <p><span>·</span><textarea name="TS_teach_period_1" id="TS_teach_period_1">Two weeks</textarea></p>
+                                <p><span>·</span><textarea name="TS_teach_period_2" id="TS_teach_period_2">Multiple weeks</textarea></p>
+                                <p><span>·</span><textarea name="TS_teach_period_3" id="TS_teach_period_3">One semester</textarea></p>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div>
+                                <h2>Job Category</h2>
+                                <p><span>·</span><textarea name="TS_job_category_1" id="TS_job_category_1">High school – limited openings available</textarea></p>
+                                <p><span>·</span><textarea name="TS_job_category_2" id="TS_job_category_2">College/University – majors available at undergraduate and post-graduate are: education, electrical engineering, mechanical engineering, computer science, computer engineering, hygiene science, business administration, finance, accounting, biomedical engineering, media and communication, interior design, industrial design, etc.</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab tab2">
+                        <div class="salary">
+                            <div class="border">
+                                <h2>Salary and Benefits</h2>
+                                <p><span>·</span><textarea name="TS_salary_benefits_1" id="TS_salary_benefits_1">Wages: $60/session ~$150/session depending on experience, ranking, level of teaching, teaching subject, etc. (each session is ~45 minutes)</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_2" id="TS_salary_benefits_2">Free room and board</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_3" id="TS_salary_benefits_3">Basic medical insurance in China</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_4" id="TS_salary_benefits_4">Visa service</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_5" id="TS_salary_benefits_5">One round-trip international air ticket</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_6" id="TS_salary_benefits_6">All related business travel expense covered</textarea></p>
+                                <p><span>·</span><textarea name="TS_salary_benefits_7" id="TS_salary_benefits_7">Free airport pick-up upon arrival and drop-off upon departure</textarea></p>
+                            </div>
+                        </div>
+                        <div class="fee">
+                            <div class="border">
+                                <h2>Program Fee</h2>
+                                <p><span>·</span><textarea name="TS_experience_1" id="TS_experience_1">None</textarea></p>
+                            </div>
+                        </div>
+                        <div class="qualifications">
+                            <div>
+                                <h2>Qualifications</h2>
+                                <p><span>·</span><textarea name="TS_qualifications_1" id="TS_qualifications_1">English language ability adequate for class instructions</textarea></p>
+                                <p><span>·</span><textarea name="TS_qualifications_2" id="TS_qualifications_2">A faculty member must have completed six or more years of full-time instructional service as ranked faculty, or its equivalent in U.S. and/or Canadian universities/colleges</textarea></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="提交">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="pic">
+            <form action="">
+                <h1 class="title">Program Types</h1>
+                <p>The following outlines provide you a general idea of the types of programs offered by Chinese universities and the cost of tuition fees to study in China.</p>
+                <p>&nbsp;</p>
+                <h2>Short-term Non-degree Programs</h2>
+                <div class="short_term">
+                    <table>
+                        <tr>
+                            <th class="th1">Program</th>
+                            <th class="th2">Duration</th>
+                            <th class="th3">Tuition Fee (RMB)</th>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_1" id="SS_program_1">Chinese language, Curriculums(e.g. Art Courses)</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_1">1 Week</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_1">500-1700</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_2" id="SS_program_2">Chinese Language, Summer School</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_2">2 Weeks</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_2">1200-1800</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_3_1" id="SS_program_3_1">Chinese language</textarea>
+                                <textarea name="SS_program_3_2" id="SS_program_3_2">Summer School</textarea>
+                                <textarea name="SS_program_3_3" id="SS_program_3_3">International Visiting Program</textarea>
+                            </td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_3">1 Month</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_3">1500-4000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_4" id="SS_program_4">Chinese Language</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_4">2 Month</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_4">4300</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_5" id="SS_program_5">Chinese Language</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_5">1 Semester</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_5">6000-8800</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_6" id="SS_program_6">Chinese Language</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_6">0.5 Year</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_6">5600-16500</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_7" id="SS_program_7">Subject Curriculums</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_7">0.5 Year</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_7">3000-33000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_8" id="SS_program_8">Chinese Language</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_8">1 Year</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_8">2800-26000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SS_program_9" id="SS_program_9">Subject Curriculums</textarea></td>
+                            <td><textarea name="SS_duration_1" id="SS_duration_9">1 Year</textarea></td>
+                            <td><textarea name="SS_fee_1" id="SS_fee_9">8000-52000</textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <h2>Degree Programs</h2>
+                <div class="degree">
+                    <table>
+                        <tr>
+                            <th class="th1">Program</th>
+                            <th class="th2">Degree</th>
+                            <th class="th3">Duration</th>
+                            <th class="th4">Tuition Fee (RMB)</th>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_1" id="SD_program_1">Interior Design</textarea></td>
+                            <td><textarea name="SD_degree_1" id="SD_degree_1">Master</textarea></td>
+                            <td><textarea name="SD_duration_1" id="SD_duration_1">1semester</textarea></td>
+                            <td><textarea name="SD_fee_1" id="SD_fee_1">23000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_2" id="SD_program_2">Graduate Program</textarea></td>
+                            <td><textarea name="SD_degree_2" id="SD_degree_2">Master</textarea></td>
+                            <td><textarea name="SD_duration_2" id="SD_duration_2">1 Year</textarea></td>
+                            <td><textarea name="SD_fee_2" id="SD_fee_2">40000-140000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_3" id="SD_program_3">Project Management</textarea></td>
+                            <td><textarea name="SD_degree_3" id="SD_degree_3">Master</textarea></td>
+                            <td><textarea name="SD_duration_3" id="SD_duration_3">1.5 Year</textarea></td>
+                            <td><textarea name="SD_fee_3" id="SD_fee_3">118000-158000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_4" id="SD_program_4">Graduate Program</textarea></td>
+                            <td><textarea name="SD_degree_4" id="SD_degree_4">Master</textarea></td>
+                            <td><textarea name="SD_duration_4" id="SD_duration_4">2 Years</textarea></td>
+                            <td><textarea name="SD_fee_4" id="SD_fee_4">9800-128640</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_5" id="SD_program_5">Graduate Program</textarea></td>
+                            <td><textarea name="SD_degree_5" id="SD_degree_5">Master</textarea></td>
+                            <td><textarea name="SD_duration_5" id="SD_duration_5">2.5 Years</textarea></td>
+                            <td><textarea name="SD_fee_5" id="SD_fee_5">16000-39000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_6" id="SD_program_6">Graduate Program</textarea></td>
+                            <td><textarea name="SD_degree_6" id="SD_degree_6">Master</textarea></td>
+                            <td><textarea name="SD_duration_6" id="SD_duration_6">3 Years</textarea></td>
+                            <td><textarea name="SD_fee_6" id="SD_fee_6">15000-43000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_7" id="SD_program_7">PHD Program</textarea></td>
+                            <td><textarea name="SD_degree_7" id="SD_degree_7">Doctoral</textarea></td>
+                            <td><textarea name="SD_duration_7" id="SD_duration_7">3 Years</textarea></td>
+                            <td><textarea name="SD_fee_7" id="SD_fee_7">20000-68000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_8" id="SD_program_8">PHD Program</textarea></td>
+                            <td><textarea name="SD_degree_8" id="SD_degree_8">Doctoral</textarea></td>
+                            <td><textarea name="SD_duration_8" id="SD_duration_8">3.5 Years</textarea></td>
+                            <td><textarea name="SD_fee_8" id="SD_fee_8">25000-30000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_9" id="SD_program_9">Costume Design, Tourism Management, etc.</textarea></td>
+                            <td><textarea name="SD_degree_9" id="SD_degree_9">Associate</textarea></td>
+                            <td><textarea name="SD_duration_9" id="SD_duration_9">4 Years</textarea></td>
+                            <td><textarea name="SD_fee_9" id="SD_fee_9">16000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_10" id="SD_program_10">Undergraduate Program</textarea></td>
+                            <td><textarea name="SD_degree_10" id="SD_degree_10">Bachelor</textarea></td>
+                            <td><textarea name="SD_duration_10" id="SD_duration_10">4 Years</textarea></td>
+                            <td><textarea name="SD_fee_10" id="SD_fee_10">12000-80000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_11" id="SD_program_11">Graduate Program</textarea></td>
+                            <td><textarea name="SD_degree_11" id="SD_degree_11">Master</textarea></td>
+                            <td><textarea name="SD_duration_11" id="SD_duration_11">4 Years</textarea></td>
+                            <td><textarea name="SD_fee_11" id="SD_fee_11">14000-23000</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="SD_program_12" id="SD_program_12">PHD Program</textarea></td>
+                            <td><textarea name="SD_degree_12" id="SD_degree_12">Master</textarea></td>
+                            <td><textarea name="SD_duration_12" id="SD_duration_12">4 Years</textarea></td>
+                            <td><textarea name="SD_fee_12" id="SD_fee_12">14400-70000</textarea></td>
+                        </tr>
+                    </table>
+                    <div class="submit">
+                        <input type="submit" value="提交">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="pic">
+            <form action="" id="camp">
+
+                <h1 class="title">Program Fee</h1>
+                <p style="margin:10px 0">The following Summer Teaching Opportunity is now available for any qualified individual who is looking for a meaningful but short-term teaching and learning experience in China.</p>
+                <div class="left">
+                    <h3 style="margin:10px 0;"><textarea name="C_program_1" id="C_program_1" style="font-size: 20px">July – August Program (July 1 ~ August 27, 2017)</textarea></h3>
+                    <ul>
+                        <li><textarea name="C_fee_1" id="C_fee_1">8 weeks program (July 3 to August  27) Regular $1590;</textarea></li>
+                        <li><textarea name="C_fee_2" id="C_fee_2">7 weeks program (July 3 to August 20) Regular $1690;</textarea></li>
+                        <li><textarea name="C_fee_3" id="C_fee_3">5 weeks program (July 3 to August 5) Regular $1790 (most popular program)</textarea></li>
+                        <li><textarea name="C_fee_4" id="C_fee_4">4 weeks program (July 3 to July 30) Regular $1890;</textarea></li>
+                        <li><textarea name="C_fee_5" id="C_fee_5">12 weeks program (May 15 ~ August 5): Regular $990;</textarea></li>
+                    </ul>
+                </div>
+                <h3>&nbsp;</h3>
+                <h3 style="margin:10px 0"><textarea name="C_program_2" id="C_program_2" style="font-size: 20px">May – August Program (May 15 ~ August 5, 2017)</textarea></h3>
+                <ul>
+                    <li><textarea name="C_fee_6" id="C_fee_6">12 weeks program (May 15 ~ August 5): Regular $990;</textarea></li>
+                </ul>
+                <h1 class="title">Summer Camp Calendar</h1>
+                <h1><textarea name="C_title" id="C_title" style="font-size: 22px;font-weight: bold">2017 Summer Camp Calendar</textarea></h1>
+                <div class="camp1">
+                    <h3><textarea name="C_camp1_title" id="C_camp1_title" style="font-size: 16px;font-weight: bold">TESL Summer Camp I Calendar of 2017</textarea></h3>
+                    <p>Exact departure date may vary by a day or a week depending on the availability of airfares and school's schedule. </p>
+                    <table>
+                        <tr>
+                            <th colspan="3"><textarea name="C_camp1_time" id="C_camp1_time" style="text-align: center;font-size: 16px; font-weight: bold">May 15 – August 5, 2017(12 weeks)</textarea></th>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date1" id="C_camp1_date1">May 12</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week1" id="C_camp1_week1">F</textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do1" id="C_camp1_do1">Departure from US.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date2" id="C_camp1_date2">May 13</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week2" id="C_camp1_week2">Sa</textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do2" id="C_camp1_do2">Arrive in Shanghai/Beijing or other city.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date3" id="C_camp1_date3">May 14</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week3" id="C_camp1_week3">S</textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do3" id="C_camp1_do3">Prepare for class lessons, and rest.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date4" id="C_camp1_date4">May 15 ~ June 29</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week4" id="C_camp1_week4"></textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do4" id="C_camp1_do4">Teaching 5 days per week from Monday to Friday, and breaks on Saturday, Sunday. (Some schools have evening and/or weekend sessions)</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date5" id="C_camp1_date5">June 30 ~ July 2</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week5" id="C_camp1_week5"></textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do5" id="C_camp1_do5">Arrive in Shanghai for tours.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date6" id="C_camp1_date6">July 3 ~ July 31</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week6" id="C_camp1_week6"></textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do6" id="C_camp1_do6">Join the Summer Camp for 4 weeks.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date7" id="C_camp1_date7">August 1</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week7" id="C_camp1_week7">Tu</textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do7" id="C_camp1_do7">Arrive in Beijing for tours.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date8" id="C_camp1_date8">August 2/3/4</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week8" id="C_camp1_week8"></textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do8" id="C_camp1_do8">Touring Beijing.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp1_date9" id="C_camp1_date9">August 5</textarea></td>
+                            <td class="td2"><textarea name="C_camp1_week9" id="C_camp1_week9">Sa</textarea></td>
+                            <td class="td3"><textarea name="C_camp1_do9" id="C_camp1_do9">Departure from Beijing</textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--Study in china, teach in China, tesl, tefl, teach abroad, sabbatical abroad, learn Chinese, Chinese culture, Chinese universities, Chinese schools, teach English, English summer camp, internship in china-->
+                <div class="camp2">
+                    <h3><textarea name="C_camp2_title" id="C_camp2_title" style="font-size: 16px;font-weight: bold">TESL Summer Camp II Calendar of 2017</textarea></h3>
+                    <p>Exact departure date may vary by a day or a week depending on the availability of airfares and school's schedule. </p>
+                    <ul>
+                        <li><textarea name="C_camp2_time1" id="C_camp2_time1">4 weeks program – July 1 to July 30</textarea></li>
+                        <li><textarea name="C_camp2_time2" id="C_camp2_time2">5 weeks program – July 1 to Aug. 5(most popular program)</textarea></li>
+                        <li><textarea name="C_camp2_time3" id="C_camp2_time3">7 weeks program - July 3 to Aug. 19</textarea></li>
+                        <li><textarea name="C_camp2_time4" id="C_camp2_time4">8 weeks program - July 3 to Aug  27</textarea></li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <th colspan="3"><textarea name="C_camp2_five" id="C_camp2_five" style="text-align: center;font-weight: bold;font-size: 18px;">Five-week Program</textarea></th>
+                            <th colspan="3"><textarea name="C_camp2_seven" id="C_camp2_seven" style="text-align: center;font-weight: bold;font-size: 18px;">Seven-week Program</textarea></th>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date1" id="C_camp2_five_date1">June 29</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week1" id="C_camp2_five_week1">Th</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do1" id="C_camp2_five_do1">Departure from US.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date1" id="C_camp2_seven_date1">June 29</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week1" id="C_camp2_seven_week1">Th</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do1" id="C_camp2_seven_do1">Departure from US.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date2" id="C_camp2_five_date2">June 30</textarea></textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week2" id="C_camp2_five_week2">Fr</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do2" id="C_camp2_five_do2">Arrive in Shanghai.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date2" id="C_camp2_seven_date2">June 30</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week2" id="C_camp2_seven_week2">Fr</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do2" id="C_camp2_seven_do2">Arrive in Shanghai.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date3" id="C_camp2_five_date3">July ½</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week3" id="C_camp2_five_week3">Sa/S</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do3" id="C_camp2_five_do3">Tours</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date3" id="C_camp2_seven_date3">July ½</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week3" id="C_camp2_seven_week3">Sa/S</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do3" id="C_camp2_seven_do3">Tours</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date4" id="C_camp2_five_date4">July 3</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week4" id="C_camp2_five_week4">M</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do4" id="C_camp2_five_do4">Arrive at the Camp, receive students and rest.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date4" id="C_camp2_seven_date4">July 3</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week4" id="C_camp2_seven_week4">M</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do4" id="C_camp2_seven_do4">Arrive at the Camp, receive students and rest.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date5" id="C_camp2_five_date5">July 4~9</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week5" id="C_camp2_five_week5">Tu~S</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do5" id="C_camp2_five_do5">Teaching for 6 days.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date5" id="C_camp2_seven_date5">July 4~30</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week5" id="C_camp2_seven_week5">Tu~S</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do5" id="C_camp2_seven_do5">Teaching for 4 weeks</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date6" id="C_camp2_five_date6">July 10</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week6" id="C_camp2_five_week6">M</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do6" id="C_camp2_five_do6">Break</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date6" id="C_camp2_seven_date6"></textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week6" id="C_camp2_seven_week6"></textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do6" id="C_camp2_seven_do6">Relocate if necessary.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date7" id="C_camp2_five_date7">July 11~16</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week7" id="C_camp2_five_week7">Tu~S</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do7" id="C_camp2_five_do7">Teaching for 6 days.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date7" id="C_camp2_seven_date7">July 31</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week7" id="C_camp2_seven_week7">Mon</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do7" id="C_camp2_seven_do7">Break</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date8" id="C_camp2_five_date8">July 17</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week8" id="C_camp2_five_week8">M</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do8" id="C_camp2_five_do8">Break</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date8" id="C_camp2_seven_date8">August 1</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week8" id="C_camp2_seven_week8">Tu</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do8" id="C_camp2_seven_do8">Arrive in Beijing for tours.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date9" id="C_camp2_five_date9">July 18~23</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week9" id="C_camp2_five_week9">Tu~S</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do9" id="C_camp2_five_do9">Teaching for 6 days</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date9" id="C_camp2_seven_date9">August 2/3/4</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week9" id="C_camp2_seven_week9"></textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do9" id="C_camp2_seven_do9">Touring Beijing</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date10" id="C_camp2_five_date10">July 24</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week10" id="C_camp2_five_week10">M</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do10" id="C_camp2_five_do10">Break</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date10" id="C_camp2_seven_date10">August 5</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week10" id="C_camp2_seven_week10">Sa</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do10" id="C_camp2_seven_do10">Arrive at Camp</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date11" id="C_camp2_five_date11">July 25~30</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week11" id="C_camp2_five_week11">Tu~S</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do11" id="C_camp2_five_do11">Teaching for 6 days</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date11" id="C_camp2_seven_date11">August 6~18</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week11" id="C_camp2_seven_week11">S~F</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do11" id="C_camp2_seven_do11">Teaching for 2 weeks</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date12" id="C_camp2_five_date12">July 31</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week12" id="C_camp2_five_week12">Mon</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do12" id="C_camp2_five_do12">Break</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date12" id="C_camp2_seven_date12">August 19/20/21</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week12" id="C_camp2_seven_week12"></textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do12" id="C_camp2_seven_do12">Touring Shanghai</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date13" id="C_camp2_five_date13">August 1</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week13" id="C_camp2_five_week13">Tu</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do13" id="C_camp2_five_do13">Arrive in Beijing for tours.</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date13" id="C_camp2_seven_date13">August 22</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week13" id="C_camp2_seven_week13">Tu</textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do13" id="C_camp2_seven_do13">Departure from Shanghai</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date14" id="C_camp2_five_date14">August 2/3/4</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week14" id="C_camp2_five_week14"></textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do14" id="C_camp2_five_do14">Touring Beijing</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date14" id="C_camp2_seven_date14"></textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week14" id="C_camp2_seven_week14"></textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do14" id="C_camp2_seven_do14"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_camp2_five_date15" id="C_camp2_five_date15">August 5</textarea></td>
+                            <td class="td2"><textarea name="C_camp2_five_week15" id="C_camp2_five_week15">Sa</textarea></td>
+                            <td class="td3 td_border"><textarea name="C_camp2_five_do15" id="C_camp2_five_do15">Departure from Beijing</textarea></td>
+                            <td class="td1"><textarea name="C_camp2_seven_date15" id="C_camp2_seven_date15"></textarea></td>
+                            <td class="td2"><textarea name="C_camp2_seven_week15" id="C_camp2_seven_week15"></textarea></td>
+                            <td class="td3"><textarea name="C_camp2_seven_do15" id="C_camp2_seven_do15"></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="schedule">
+                    <h3><textarea name="C_schedule" id="C_schedule" style="font-size: 16px;font-weight: bold">Summer Camp Daily Working Schedule for an American Teacher (Samples)</textarea></h3>
+                    <p>Exact schedules may vary from one camp to another determining by Chinese host institutions.</p>
+                    <table>
+                        <tr>
+                            <th class="th1"><textarea name="C_schedule_time" id="C_schedule_time" style="text-align: center;font-weight: bold;font-size: 18px;">Time</textarea></th>
+                            <th><textarea name="C_schedule_activity" id="C_schedule_activity" style="text-align: center;font-weight: bold;font-size: 18px;">Activities</textarea></th>
+                        </tr>
+                        <tr>
+                            <td class="td1"><textarea name="C_schedule_time1" id="C_schedule_time1">7:00</textarea></td>
+                            <td><textarea name="C_schedule_do1" id="C_schedule_do1">Good morning.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time2" id="C_schedule_time2">7:00~7:30</textarea></td>
+                            <td><textarea name="C_schedule_do2" id="C_schedule_do2">Breakfast.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time3" id="C_schedule_time3">7:30~8:15</textarea></td>
+                            <td><textarea name="C_schedule_do3" id="C_schedule_do3">Study lesson: Chinese language and Culture.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time4" id="C_schedule_time4">8:15~9:00</textarea></td>
+                            <td><textarea name="C_schedule_do4" id="C_schedule_do4">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time5" id="C_schedule_time5">9:10~9:55</textarea></td>
+                            <td><textarea name="C_schedule_do5" id="C_schedule_do5">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time6" id="C_schedule_time6">10:05~10:50</textarea></td>
+                            <td><textarea name="C_schedule_do6" id="C_schedule_do6">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time7" id="C_schedule_time7">11:00~11:45</textarea></td>
+                            <td><textarea name="C_schedule_do7" id="C_schedule_do7">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time8" id="C_schedule_time8">11:45~12:15</textarea></td>
+                            <td><textarea name="C_schedule_do8" id="C_schedule_do8">Lunch.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time9" id="C_schedule_time9">12:15~14:30</textarea></td>
+                            <td><textarea name="C_schedule_do9" id="C_schedule_do9">Noon break, free time.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time10" id="C_schedule_time10">14:30~15:15</textarea></td>
+                            <td><textarea name="C_schedule_do10" id="C_schedule_do10">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time11" id="C_schedule_time11">15:25~16:10</textarea></td>
+                            <td><textarea name="C_schedule_do11" id="C_schedule_do11">English lesson: around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time12" id="C_schedule_time12">16:10~18:00</textarea></td>
+                            <td><textarea name="C_schedule_do12" id="C_schedule_do12">Free time.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time13" id="C_schedule_time13">18:00~18:30</textarea></td>
+                            <td><textarea name="C_schedule_do13" id="C_schedule_do13">Dinner</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time14" id="C_schedule_time14">19:00~20:30(M, W, & F)</textarea></td>
+                            <td><textarea name="C_schedule_do14" id="C_schedule_do14">Together with Chinese teachers to organize all kinds of informal learning related activities every other day, such as sing English songs, play English language related games, and English corner... around 24 students.</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time15" id="C_schedule_time15">19:00~20:30(T, Th, & Sa)</textarea></td>
+                            <td><textarea name="C_schedule_do15" id="C_schedule_do15">Free time</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time16" id="C_schedule_time16">20:30~23:00</textarea></td>
+                            <td><textarea name="C_schedule_do16" id="C_schedule_do16">Free time</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><textarea name="C_schedule_time17" id="C_schedule_time17">23:00</textarea></td>
+                            <td><textarea name="C_schedule_do17" id="C_schedule_do17">Good night.</textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="提交">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+
+</body>
+</html>

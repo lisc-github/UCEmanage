@@ -1,0 +1,164 @@
+.container{
+    overflow: scroll;
+}
+
+.guide {
+    font-size: 15px;
+    width: 1000px;
+    margin: 20px auto;
+    color: red; }
+
+.tab {
+    width: 1000px;
+    margin: 0 auto 60px; }
+.tab table {
+    border-collapse: collapse;
+    width: 100%; }
+
+.tab {
+    width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden; }
+.tab h2 {
+    margin: 0 0 10px 0;
+    background: #aaa;
+    color: #fff;
+    line-height: 40px;
+    padding: 10px;
+    text-align: center; }
+.tab p, .tab h3 {
+    font-size: 14px;
+    padding: 0 22px; }
+.tab p {
+    line-height: 24px; }
+.tab p span {
+    margin-right: 10px;
+    font-size: 24px; }
+.tab h3 {
+    line-height: 24px;
+    font-family: BoldRoboto; }
+.tab .country {
+    float: left;
+    width: 16%;
+    text-align: center; }
+.tab .type {
+    float: left;
+    width: 25%; }
+.tab .length {
+    float: left;
+    width: 25%; }
+.tab .category {
+    float: left;
+    width: 34%; }
+
+.tab2 {
+    width: 1000px;
+    margin: 30px auto 0;
+    background: #fff;
+    overflow: hidden; }
+.tab2 h2 {
+    margin: 0 0 10px 0;
+    background: #aaa;
+    color: #fff;
+    line-height: 40px; }
+.tab2 .salary {
+    float: left;
+    width: 36%; }
+.tab2 .fee {
+    float: left;
+    width: 28%; }
+.tab2 .qualifications {
+    float: left;
+    width: 36%; }
+
+.short_term {
+    overflow: hidden;
+    margin-bottom: 30px; }
+.short_term table {
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+    width: 100%; }
+.short_term table tr th {
+    text-align: left;
+    padding: 6px;
+    border: 1px solid #aaa;
+    background: #aaa;
+    color: #fff; }
+.short_term table tr .th1 {
+    width: 30%; }
+.short_term table tr .th2, .short_term table tr .th3, .short_term table tr .th4 {
+    width: 20%; }
+.short_term table tr td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    background: #fff; }
+
+.degree {
+    overflow: hidden;
+    margin-bottom: 30px; }
+.degree table {
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+    width: 100%; }
+.degree table tr th {
+    text-align: left;
+    padding: 6px;
+    border: 1px solid #aaa;
+    background: #aaa;
+    color: #fff; }
+.degree table tr .th1 {
+    width: 30%; }
+.degree table tr .th2, .degree table tr .th3, .degree table tr .th4 {
+    width: 20%; }
+.degree table tr td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    background: #fff; }
+
+
+.camp1 h4 {
+    margin-bottom: 10px;
+    text-align: center; }
+.camp1 table {
+    background:#fff;
+    border-collapse: collapse;
+    margin: 10px auto 80px;
+    width: 1000px; }
+.camp1 table tr td {
+    border: 1px solid #ccc;
+    padding: 8px 12px; }
+.camp1 table tr .td1 {
+    width: 160px; }
+.camp1 table tr .td2 {
+    width: 60px; }
+
+.camp2 table {
+    background:#fff;
+    width: 1000px;
+    border-collapse: collapse;
+    margin: 10px auto 80px; }
+.camp2 table tr td {
+    border: 1px solid #ccc;
+    padding: 8px 12px; }
+.camp2 table tr .td1 {
+    width: 120px; }
+.camp2 table tr .td2 {
+    width: 60px; }
+.camp2 table tr .td {
+    width: 260px; }
+.camp2 table tr .td_border {
+    border-right: 1px solid #666; }
+
+.schedule table {
+    background:#fff;
+    border-collapse: collapse;
+    width: 1000px;
+    margin: 0 auto; }
+.schedule table .th1 {
+    width: 26%; }
+.schedule table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px; }
+.schedule table .td1 {
+    width: 120px; }

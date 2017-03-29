@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/manage.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div class="top">
+    <h1>UCE 用户信息管理系统</h1>
+</div>
+<div class="main">
+    <div class="list">
+        <a href="manage.html" style="background:#666">申请表管理</a>
+        <a href="manage_pic.html">图片管理</a>
+        <a href="manage_data.html">数据管理</a>
+        <a class="exit" style="background:red;color:#000">安全退出</a>
+    </div>
+    <div class="container">
+        <div class="user">
+            <div class="box">
+                <div class="search">
+                    <input type="text" id="keyword" placeholder="关键字">
+                    <span class="search_click"></span>
+                </div>
+                <div class="table">
+                    <div class="pages">
+                        <table>
+                            <tr>
+                                <th class="th1">编号</th>
+                                <th class="th2">用户名</th>
+                                <th class="th3">真实姓名</th>
+                                <th class="th4">电子邮箱</th>
+                                <th class="th5">
+                                    <select name="" id="" style="border:none;font-size: 18px;">
+                                        <option value="">有申请表</option>
+                                        <option value="">无申请表</option>
+                                        <option value="">全部</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                        </table>
+                        <div class='forms'>
+                            <div class='close'></div>
+                            <div class='table_box'>
+                                <table>
+                                    <tr>
+                                        <td colspan="4" class="fenlei">Biological</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">FirstName</td>
+                                        <td class="td2"></td>
+                                        <td class="td1">MiddleName</td>
+                                        <td class="td2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LastName</td>
+                                        <td></td>
+                                        <td>Email</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date of Birth</td>
+                                        <td></td>
+                                        <td>Gender</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>所选项目</td>
+                                        <td></td>
+                                        <td>时间</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country of Birth</td>
+                                        <td></td>
+                                        <td>State of Birth</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ethnicity</td>
+                                        <td></td>
+                                        <td>Country of Citizenship</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fenlei_1" colspan="4">Home/Permanent Address</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Street Address</td>
+                                        <td></td>
+                                        <td>City</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>State</td>
+                                        <td></td>
+                                        <td>Zip Code</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fenlei_1" colspan="4">Mailing Address (Please do not use PO Box address)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Street Address</td>
+                                        <td></td>
+                                        <td>City</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>State</td>
+                                        <td></td>
+                                        <td>Zip Code</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail Address</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone Number</td>
+                                        <td></td>
+                                        <td>Cell Number</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fenlei_1" colspan="4">Emergency Contact</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td></td>
+                                        <td>Relationship</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail</td>
+                                        <td></td>
+                                        <td>Phone</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei">Background</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei_1">Do you hold any education degrees or teaching certifications?</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei_1">Are you certified to teach English as a Second/Foreign Language (TESL/TEFL)?</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Current Occupation</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Employer's Name</td>
+                                        <td></td>
+                                        <td>Phone</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Institution's Name</td>
+                                        <td></td>
+                                        <td>Did you graduate from this institution?</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dates Attended</td>
+                                        <td></td>
+                                        <td>Type of Degree or Classification</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major of Specialization</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anticipated Date of Graduation (If any)</td>
+                                        <td></td>
+                                        <td>Years Completed by Time of Departure</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>I do not play to graduate</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type of Degree or Classification</td>
+                                        <td></td>
+                                        <td>Major of Specialization</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei">Passport Information</td>
+                                    </tr>
+                                    <tr style="height:260px;">
+                                        <td>Passport(picture)</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Passport Expiry Date</td>
+                                        <td></td>
+                                        <td>Passport Number</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Passport Issue Date</td>
+                                        <td></td>
+                                        <td>Issuing Country</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Issuing City</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei">Teaching in China Placement Preferences</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Are you traveling with a friend or partner? Please enter the name(s) here:</td>
+                                        <td></td>
+                                        <td>I would rather be placed near</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Please choose your first choice of institution level</td>
+                                        <td></td>
+                                        <td>Please choose your second choice of institution level</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Please choose your third choice of institution level</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">Other considerations UCE should make in assigning your teaching location (for medical, personal, or other important reasons) should be briefly described below.</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="fenlei">References/Recommendations</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="font-weight: bold">A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-Mail Address</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Daytime Phone Number</td>
+                                        <td></td>
+                                        <td>Salutation/Prefix</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td></td>
+                                        <td>Last Name</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Organization</td>
+                                        <td></td>
+                                        <td>Position</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4" style="font-weight: bold">B</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-Mail Address</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Daytime Phone Number</td>
+                                        <td></td>
+                                        <td>Salutation/Prefix</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td></td>
+                                        <td>Last Name</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Organization</td>
+                                        <td></td>
+                                        <td>Position</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pages">
+                        <table>
+                            <tr>
+                                <th class="th1">编号</th>
+                                <th class="th2">用户名</th>
+                                <th class="th3">真实姓名</th>
+                                <th class="th4">电子邮箱</th>
+                                <th class="th5">
+                                    <select name="" style="border:none;font-size: 18px;">
+                                        <option value="">有申请表</option>
+                                        <option value="">无申请表</option>
+                                        <option value="">全部</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>smart boy</td>
+                                <td>clay thompson</td>
+                                <td>154354653@hotmail.com</td>
+                                <td><a href="javascript:;" class="blue">申请表</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="change_page">
+            <div class="shell">
+                <span class="start_page">首页</span>
+                <span class="previous_page">上一页</span>
+                <span id="pages"></span>
+                <span class="next_page">下一页</span>
+                <span class="end_page">末页</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var dot_pre = $("<span class='dot_pre' style='border:none'>...</span>");
+    var dot_end = $("<span class='dot_end' style='border:none'>...</span>");
+    $(".blue").each(function (i) {
+        $(this).click(function () {
+            $(".forms").each(function () {
+                $(this).css("display","none");
+            });
+            $(".forms").eq(i).css("display","block");
+        })
+    });
+    $(".close").each(function (j) {
+        $(this).click(function () {
+            $(".forms").eq(j).css("display","none");
+        })
+    })
+
+    var aPages = $(".pages");
+    for(var i=1;i<aPages.length+1;i++){
+        var newPage = $("<span class='page'></span>");
+        newPage.html(i);
+        newPage.appendTo("#pages");
+    }
+    var aPage = $(".page");
+    for(var x=0;x<aPages.length;x++){
+        aPages.eq(x).css('display',"none");
+    }
+    aPages.eq(0).css('display',"block");
+    aPage.eq(0).css('background',"#666");
+    for(var j=0;j<aPage.length;j++){
+        aPage.eq(j).attr('index',j);
+        aPage.eq(j).click(function () {
+            for(var z=0;z<aPages.length;z++){
+                aPages.eq(z).css("display","none");
+                aPage.eq(z).css("background","none");
+            }
+            aPages.eq(($(this).attr('index'))).css("display","block");
+            aPage.eq(($(this).attr('index'))).css("background","#666");
+            if(aPage.length>4){
+                for(var y=0;y<aPage.length;y++){
+                    aPage.eq(y).css("display",'none');
+                }
+                var _index = parseInt($(this).attr('index'));
+                if(_index>2){
+                    dot_pre.css("display","inline-block");
+                    for(var y=_index-2;y<_index+3;y++){
+                        aPage.eq(y).css("display",'inline-block');
+                    }
+                    dot_pre.insertBefore(aPage.eq(0));
+                    if(_index>aPage.length-4){
+                        dot_end.css("display","none");
+                    }
+                    else{
+                        dot_end.css("display","inline-block");
+                    }
+                }
+                else{
+                    dot_pre.css("display","none");
+                    for(var y=0;y<_index+3;y++){
+                        aPage.eq(y).css("display",'inline-block');
+                    }
+                }
+
+                dot_end.appendTo($("#pages"));
+            }
+        })
+    }
+    $(".previous_page").click(function () {
+        var temp;
+        for(var j=0;j<aPages.length;j++){
+            if(aPages.eq(j).css('display')=="block"){
+                temp = j;
+            }
+        }
+        if(temp!=0){
+            for(var z=0;z<aPages.length;z++){
+                aPages.eq(z).css("display","none");
+                aPage.eq(z).css("background","none");
+            }
+            aPages.eq(temp-1).css("display","block");
+            aPage.eq(temp-1).css("background","#666");
+        }
+        if(aPage.length>4){
+            for(var y=0;y<aPage.length;y++){
+                aPage.eq(y).css("display",'none');
+            }
+
+            if(temp>2){
+                dot_pre.css("display","inline-block");
+                for(var y=temp-2;y<temp+3;y++){
+                    aPage.eq(y).css("display",'inline-block');
+                }
+                dot_pre.insertBefore(aPage.eq(0));
+                if(temp>aPage.length-4){
+                    dot_end.css("display","none");
+                }
+                else{
+                    dot_end.css("display","inline-block");
+                }
+            }
+            else{
+                dot_pre.css("display","none");
+                for(var y=0;y<4;y++){
+                    aPage.eq(y).css("display",'inline-block');
+                }
+            }
+
+            dot_end.appendTo($("#pages"));
+        }
+    });
+    $(".next_page").click(function () {
+        var temp;
+        for(var j=0;j<aPages.length;j++){
+            if(aPages.eq(j).css('display')=="block"){
+                temp = j;
+            }
+        }
+        if(temp<aPages.length-1){
+            for(var z=0;z<aPages.length;z++){
+                aPages.eq(z).css("display","none");
+                aPage.eq(z).css("background","none");
+            }
+            aPages.eq(temp+1).css("display","block");
+            aPage.eq(temp+1).css("background","#666");
+            if(aPage.length>4){
+                for(var y=0;y<aPage.length;y++){
+                    aPage.eq(y).css("display",'none');
+                }
+                console.log(temp);
+                if(temp>1){
+                    dot_pre.css("display","inline-block");
+                    for(var y=temp-1;y<temp+3;y++){
+                        aPage.eq(y).css("display",'inline-block');
+                    }
+                    dot_pre.insertBefore(aPage.eq(0));
+                    if(temp>aPage.length-4){
+                        dot_end.css("display","none");
+                    }
+                    else{
+                        dot_end.css("display","inline-block");
+                    }
+                }
+                else{
+                    dot_pre.css("display","none");
+                    for(var y=0;y<4;y++){
+                        aPage.eq(y).css("display",'inline-block');
+                    }
+                }
+
+                dot_end.appendTo($("#pages"));
+            }
+        }
+
+    });
+    $(".end_page").click(function () {
+        dot_pre.css("display","inline-block");
+        dot_end.css("display","none");
+        for(var z=0;z<aPages.length;z++){
+            aPages.eq(z).css("display","none");
+            aPage.eq(z).css("background","none");
+        }
+        aPages.eq(aPages.length-1).css("display","block");
+        aPage.eq(aPages.length-1).css("background","#666");
+        if(aPage.length>4){
+            for(var y=0;y<aPage.length;y++){
+                aPage.eq(y).css("display",'none');
+            }
+            for(var y=aPage.length-4;y<aPage.length;y++){
+                aPage.eq(y).css("display",'inline-block');
+            }
+            dot_pre.insertBefore(aPage.eq(0));
+        }
+    });
+    $(".start_page").click(function () {
+        dot_pre.css("display","none");
+        dot_end.css("display","inline-block");
+        for(var z=0;z<aPages.length;z++){
+            aPages.eq(z).css("display","none");
+            aPage.eq(z).css("background","none");
+        }
+        aPages.eq(0).css("display","block");
+        aPage.eq(0).css("background","#666");
+        if(aPage.length>4){
+            for(var y=0;y<aPage.length;y++){
+                aPage.eq(y).css("display",'none');
+            }
+            for(var y=0;y<4;y++){
+                aPage.eq(y).css("display",'inline-block');
+            }
+            dot_end.appendTo($("#pages"));
+        }
+    });
+
+    if(aPage.length>4){
+        for(var y=0;y<aPage.length;y++){
+            aPage.eq(y).css("display",'none');
+        }
+        for(var y=0;y<4;y++){
+            aPage.eq(y).css("display",'inline-block');
+        }
+        dot_end.appendTo($("#pages"));
+    }
+    $(".exit").click(function () {
+        var r = confirm("确定退出吗？");
+        if(r==true){
+            window.open("login.html","_self");
+        }
+    })
+
+</script>
+
+</body>
+</html>

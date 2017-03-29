@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: #163055;
+        }
+        .top{
+            height:120px;
+            line-height: 120px;
+            background:#0d3a5d;
+        }
+        .top h1{
+            font-size: 40px;
+            color:#eee;
+            padding-left:20px;
+        }
+        .main{
+            height:100%;
+            overflow: hidden;
+        }
+        .main .box{
+            margin:220px auto;
+            height:280px;
+            width:540px;
+            background:rgba(255,255,255,0.1);
+            background:#2d4466\9;
+            overflow: hidden;
+        }
+        .main .box form{
+            width:360px;
+            margin:60px auto;
+        }
+        .main .box .row{
+            height:40px;
+            margin-top:6px;
+            overflow: hidden;
+        }
+        .main .box .row input[type='text'],.main .box .row input[type='password']{
+            background:#fff;
+            line-height:30px;
+            border:2px solid #ccc;
+            float: right;
+            height:30px;
+            width:75.3%;
+        }
+        .main .box .submit{
+            height:30px;
+            margin-top:20px;
+            text-align: right;
+        }
+        .main .box .submit input[type='submit']{
+            width:25%;
+            height:26px;
+            border:none;
+            color:#fff;
+            background:#6767ea;
+            cursor:pointer;
+        }
+        .main .box label{
+            width:80px;
+            color:#fff;
+            float: left;
+            height:32px;
+            line-height:32px;
+        }
+        .footer{
+            height:60px;
+            position:fixed;
+            bottom:0;
+            width:100%;
+            background:#0d3a5d;
+            text-align: center;
+            line-height:60px;
+            color:#eee;
+        }
+        .pic{
+            float: right;
+            width:32.9%;
+            height:30px;
+            border:2px solid #ccc;
+            vertical-align: bottom;
+            margin-left:5px;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+<h1>UCE 用户信息管理系统</h1>
+</div>
+<div class="main">
+    <div class="box">
+        <form action="" method="post">
+            <div class="row">
+                <label for="user">用户名</label>
+                <input type="text" name="user" id="user">
+            </div>
+            <div class="row">
+                <label for="password">密码</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="row">
+                <label for="code">验证码</label>
+                <div class="pic"></div>
+                <input type="text" name="code" id="code" style="width:40%;display:inline-block">
+            </div>
+            <div class="submit">
+                <input type="submit" value="登陆">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <h3>© 2016 by US-China Education and Culture Exchange Center</h3>
+</div>
+<script>
+
+    $("form").submit(submitHandler);
+    function submitHandler() {
+        var username = $.trim($("input[type='text']").val());
+        var password = $.trim($("input[type='password']").val());
+        var code = $.trim($("input[name='code']").val());
+        if(username==''){
+            alert("请输入用户名！！！");
+            return false;
+        }
+        if(password==''){
+            alert("请输入密码！！！");
+            return false;
+        }
+        if(code==''){
+            alert("请输入验证码！！！");
+            return false;
+        }
+        if(username!="杭州美中网络"||password!='666666'){
+            alert("用户名或密码错误！！！");
+            return false;
+        }
+        window.open("manage.html");
+        window.close();
+    }
+
+
+</script>
+</body>
+</html>
